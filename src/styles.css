@@ -49,18 +49,72 @@ img {
   max-width: 100%;
 }
 
-.profile {
+/* Intro - mobile first */
+.intro {
   position: relative;
-  height: fit-content;
-  width: fit-content;
-  margin: 0 auto;
+  isolation: isolate;
+  padding: 24px 16px 0;
 }
 
+/* Slanted blue background behind the photo */
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  z-index: -1;
+}
+
+.profile {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
+/* Crops the photo to a portrait shape */
+.profile img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* Name sits over the bottom of the photo */
 .hero {
   position: absolute;
-  bottom: -20px;
-  left: 55px;
-  font-family: "Raleway";
-  color: beige;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
   font-size: 3rem;
+  line-height: 1.1;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.about h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.socials img {
+  width: 32px;
+  height: 32px;
 }
