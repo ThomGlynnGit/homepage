@@ -178,3 +178,56 @@ img {
   margin: 8px 0 0;
   font-size: 0.8rem;
 }
+
+/* Contact - one centred column on mobile */
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 400px);
+  justify-content: center;
+  gap: 24px;
+  padding: 48px 16px;
+  background-color: var(--primary);
+  color: white;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+}
+
+.contact-message p {
+  margin: 8px 0 0;
+  font-size: 1.1rem;
+}
+
+/* Removes the default italics on address */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-style: normal;
+}
+
+.contact-details p {
+  margin: 0 0 8px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Turns the black icons white */
+.contact-link img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+.contact .socials {
+  margin-top: 16px;
+}
