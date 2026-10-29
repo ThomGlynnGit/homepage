@@ -1,15 +1,52 @@
 @font-face {
   font-family: "Inter";
   src: url("./fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
-  font-weight: 600;
+  /* Variable fonts cover the full weight range */
+  font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Raleway";
   src: url("./fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
-  font-weight: 600;
+  font-weight: 100 900;
   font-style: normal;
+}
+
+/* Colours & shadow used across the page */
+:root {
+  --primary: #0891b2;
+  --text: #575655;
+  --heading: #1a1a1a;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Inter for body text */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Raleway for headings */
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: var(--heading);
+}
+
+/* Stops images overflowing their container */
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .profile {
