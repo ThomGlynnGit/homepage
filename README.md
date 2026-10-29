@@ -1,3 +1,3 @@
-# webpack-template
+# homepage
 
-A template for webpack based repositories.
+A portfolio homepage built using mobile first responsive design practices.
