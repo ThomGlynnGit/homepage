@@ -231,3 +231,93 @@ img {
 .contact .socials {
   margin-top: 16px;
 }
+
+/* Tablet */
+@media (min-width: 700px) {
+  .intro {
+    padding: 48px 32px;
+  }
+
+  .intro::before {
+    height: 380px;
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+  }
+
+  /* Name moves to the top right, so it positions off .intro instead */
+  .profile {
+    position: static;
+    max-width: 320px;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  /* Keeps the photo on top of the about card */
+  .profile img {
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow);
+  }
+
+  .hero {
+    top: 40px;
+    right: 32px;
+    bottom: auto;
+    left: auto;
+    z-index: 2;
+    padding: 0;
+    text-align: right;
+  }
+
+  /* Card tucks under the photo */
+  .about {
+    display: flow-root;
+    max-width: none;
+    margin: -320px 0 0 40px;
+    padding: 32px;
+    background-color: white;
+    box-shadow: var(--shadow);
+  }
+
+  /* Invisible float the size of the photo overlap, so text wraps around it */
+  .about::before {
+    content: "";
+    float: left;
+    width: 272px;
+    height: 296px;
+  }
+
+  .socials {
+    justify-content: flex-end;
+  }
+
+  .work {
+    padding: 32px 32px 96px;
+  }
+
+  .work h2 {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    text-align: left;
+  }
+
+  /* Two cards per row */
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+  }
+
+  /* Message & details side by side */
+  .contact {
+    grid-template-columns: repeat(2, minmax(0, 450px));
+    gap: 48px;
+    padding: 64px 32px;
+  }
+
+  .contact h2 {
+    text-align: left;
+  }
+
+  .contact .socials {
+    justify-content: flex-start;
+  }
+}
