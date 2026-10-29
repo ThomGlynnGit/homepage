@@ -321,3 +321,68 @@ img {
     justify-content: flex-start;
   }
 }
+
+/* Desktop */
+@media (min-width: 1024px) {
+  /* Photo & about card side by side, centred up to 1200px */
+  .intro {
+    display: grid;
+    grid-template-columns: 400px minmax(0, 1fr);
+    align-items: start;
+    padding: 64px max(48px, calc((100% - 1200px) / 2));
+  }
+
+  .intro::before {
+    height: 600px;
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 0 100%);
+  }
+
+  /* Name goes back over the bottom of the photo */
+  .profile {
+    position: relative;
+    max-width: none;
+  }
+
+  .hero {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .about {
+    margin: 48px 0 0;
+    padding: 32px 40px;
+  }
+
+  /* No photo overlap to wrap around */
+  .about::before {
+    content: none;
+  }
+
+  .about h2 {
+    text-align: left;
+  }
+
+  .work {
+    padding: 64px 48px 120px;
+  }
+
+  .work h2 {
+    max-width: 1200px;
+  }
+
+  /* Three cards per row */
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+  }
+
+  .contact {
+    grid-template-columns: repeat(2, minmax(0, 560px));
+    padding: 80px 48px;
+  }
+}
